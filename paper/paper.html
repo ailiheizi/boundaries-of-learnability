@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc 3.10" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Boundaries of Learnability</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Boundaries of Learnability</h1>
+</header>
+<h1
+id="boundaries-of-learnability-when-explicit-knowledge-enables-and-implicit-knowledge-fails">Boundaries
+of Learnability: When Explicit Knowledge Enables and Implicit Knowledge
+Fails</h1>
+<h2 id="abstract">Abstract</h2>
+<p>We investigate the boundaries of what language models can and cannot
+learn, through two complementary studies spanning reasoning and
+narrative understanding. In <strong>Study 1</strong> (compositional
+reasoning), we show that models perfectly recall individual facts
+(single-hop 100%) but catastrophically fail at implicit multi-hop
+composition (2-hop: 27%, 4-hop: 0%). Chain-of-thought (CoT) rescues
+composition when facts are in-context (scaling from 40% at 1.5B to 100%
+at large scale), but <strong>completely fails when facts are
+internalized in weights</strong> (0-2% across all scales)—revealing that
+the bottleneck is knowledge retrievability, not reasoning capacity. In
+<strong>Study 2</strong> (narrative structure from reader comments), we
+show that reader annotations reliably mark structural positions (4.5×
+above baseline, independent of arousal), and models can distinguish
+coarse-grained structural scenes (100%), but <strong>cannot distinguish
+fine-grained within-scene foreshadowing</strong> (44%, n=18,
+p=0.76)—because foreshadowing is a reader’s retrospective
+interpretation, not a learnable textual feature. Together, these
+findings establish a unified boundary: <strong>explicit knowledge
+(in-context facts, keyword annotations) is usable; implicit knowledge
+(weight-stored facts, subtle textual cues) is not compositionally
+accessible or learnable</strong>, and this limitation does not scale
+away with model size.</p>
+<hr />
+<h2 id="introduction">1. Introduction</h2>
+<p>A fundamental question in AI is: what can models learn, and what
+remains beyond their reach? We approach this through two empirical
+studies that, despite different domains, converge on the same
+answer.</p>
+<p><strong>The explicit-implicit boundary.</strong> When knowledge is
+presented explicitly—facts stated in the prompt, structural positions
+marked by keywords—models use it effectively. When the same knowledge
+exists only implicitly—encoded in model weights after training, or
+latent in textual style without surface markers—models fail to access or
+learn it. Critically, this failure persists across model scales.</p>
+<p>This connects to the Reversal Curse (Berglund et al., 2023): models
+trained on “A is B” cannot infer “B is A.” We generalize this from
+single-hop reversal to multi-hop composition (Study 1) and from factual
+recall to narrative structure learning (Study 2), showing that the
+underlying limitation—unidirectional, non-composable knowledge
+storage—manifests across domains.</p>
+<p><strong>Contributions:</strong> 1. A compositional reasoning
+benchmark with anti-cheating controls (fictional entities, single-hop
+gating, open-generation), revealing that CoT rescue depends on knowledge
+being in-context and scales with model capacity (§3). 2. The first
+demonstration that weight-internalized facts cannot support CoT-based
+composition regardless of scale, localizing the bottleneck to knowledge
+retrievability (§3.3). 3. A systematic study of reader comments as
+narrative structure signals, establishing that keyword annotations are
+reliable coarse-grained position labels (4.5×) but carry no learnable
+fine-grained textual signal (§4). 4. A unified framework connecting
+these findings: the explicit-implicit boundary as a fundamental
+constraint on current architectures (§5).</p>
+<hr />
+<h2 id="related-work">2. Related Work</h2>
+<p><strong>Compositional generalization.</strong> SCAN (Lake &amp;
+Baroni, 2018), COGS (Kim &amp; Linzen, 2020), and subsequent work test
+whether models generalize compositionally from primitives. We test a
+simpler form: can models compose <em>explicitly given</em> facts via
+multi-hop chains? Our contribution is the storage-axis comparison
+(in-context vs. weight-internalized).</p>
+<p><strong>Reversal Curse.</strong> Berglund et al. (2023) showed models
+trained on “A is B” fail to answer “What is B?” Allen-Zhu &amp; Li
+(2024) provide theoretical grounding. We extend this from single-hop
+reversal to multi-hop composition, and from recall to CoT-mediated
+reasoning.</p>
+<p><strong>Chain-of-thought.</strong> Wei et al. (2022) established CoT
+as a reasoning enhancer. We show CoT’s effectiveness is
+<em>conditional</em> on knowledge accessibility: it works when facts are
+in-context but fails when they must be retrieved from weights.</p>
+<p><strong>Narrative structure detection.</strong> TRIPOD (Papalampidi
+et al., 2019) detects turning points from screenplay text. Danmaku-based
+highlight detection (2017-2024) uses comment density as arousal signal.
+We bridge these: testing whether comments carry <em>structural</em>
+(relational, not scalar) information learnable from content.</p>
+<p><strong>Reader behavior as training signal.</strong> “Teaching Human
+Behavior Improves Content Understanding” (2405.00942) uses receiver
+behavior to improve LLM content understanding. We test a sharper claim:
+whether reactions encode <em>narrative structure</em> (setup→payoff
+links) beyond arousal peaks.</p>
+<hr />
+<h2 id="study-1-compositional-reasoning-collapse">3. Study 1:
+Compositional Reasoning Collapse</h2>
+<h3 id="task-design">3.1 Task Design</h3>
+<p>We construct fictional fact chains: entities E₀→E₁→E₂→…→Eₖ linked by
+a “work partner” relation. Only atomic single-hop facts are provided;
+k-hop composition questions are never explicitly stated.</p>
+<p><strong>Anti-cheating controls:</strong> - Fictional entities (random
+names from disjoint pools, absent from pretraining) - Single-hop gating
+(verify model recalls each atomic fact before testing composition) -
+Open-generation (exact name match, not multiple-choice—avoids
+recognition inflation) - Distractor chains (3 unrelated chains shuffled
+in) + randomized order - Multiple seeds</p>
+<h3 id="in-context-results-scale-axis">3.2 In-Context Results: Scale
+Axis</h3>
+<p>All facts presented in the prompt. Three conditions: direct answer,
+CoT.</p>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 16%" />
+<col style="width: 46%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Model</th>
+<th>Single-hop</th>
+<th>Direct Composition (2/3/4-hop)</th>
+<th>CoT (2/3/4-hop)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qwen2.5-1.5B</td>
+<td>100%</td>
+<td>25→5→5%</td>
+<td>45/45/30%</td>
+</tr>
+<tr>
+<td>Qwen2.5-3B</td>
+<td>100%</td>
+<td>20→10→0%</td>
+<td>60/70/65%</td>
+</tr>
+<tr>
+<td>DeepSeek-chat</td>
+<td>100%</td>
+<td>27→7→0%</td>
+<td>100/100/100%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Finding 1:</strong> Direct composition collapses universally
+(all scales crash to 0-27% beyond 2-hop). <strong>Finding 2:</strong>
+CoT rescue scales monotonically with model capacity: 40% → 65% →
+100%.</p>
+<h3 id="weight-internalized-results-storage-axis">3.3
+Weight-Internalized Results: Storage Axis</h3>
+<p>Same facts LoRA-trained into model weights (12 epochs, closed-book
+evaluation, 2 seeds × 20 chains).</p>
+<table>
+<thead>
+<tr>
+<th>Storage</th>
+<th>Model</th>
+<th>Direct (2/3/4)</th>
+<th>CoT (2/3/4)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In-context</td>
+<td>1.5B</td>
+<td>25→5→5%</td>
+<td>45→45→30%</td>
+</tr>
+<tr>
+<td>In-context</td>
+<td>3B</td>
+<td>20→10→0%</td>
+<td>60→70→65%</td>
+</tr>
+<tr>
+<td><strong>Weight</strong></td>
+<td><strong>1.5B</strong></td>
+<td>35→0→3%</td>
+<td><strong>2→0→0%</strong></td>
+</tr>
+<tr>
+<td><strong>Weight</strong></td>
+<td><strong>3B</strong></td>
+<td>5→0→0%</td>
+<td><strong>8→0→0%</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Finding 3 (core):</strong> Weight-internalized CoT completely
+fails (0-8%) and does not improve with scale (1.5B ≈ 3B ≈ 0%).</p>
+<p><strong>Diagnostic:</strong> Raw CoT outputs from weight-internalized
+models show: (a) second-hop retrieval failure (stuck on intermediate
+entity), (b) hallucinated entities absent from training (“Tovak
+Sterling”), (c) correct chain enumeration followed by wrong final
+answer. The model can write reasoning <em>steps</em> but cannot reliably
+<em>retrieve</em> the next fact from weights at each step.</p>
+<h3 id="interpretation">3.4 Interpretation</h3>
+<p>CoT provides a reasoning <em>scaffold</em>, but the scaffold requires
+reliable fact <em>supply</em>. Weight-internalized facts are stored as
+isolated unidirectional keys—CoT’s chained retrieval fails at each hop,
+and this failure is architecture-level (does not scale away). This
+generalizes the Reversal Curse: not just “A→B doesn’t yield B→A,” but
+“weight-stored facts cannot support <em>any</em> multi-hop CoT
+retrieval.”</p>
+<hr />
+<h2 id="study-2-narrative-structure-learnability">4. Study 2: Narrative
+Structure Learnability</h2>
+<h3 id="can-reader-reactions-mark-structure">4.1 Can Reader Reactions
+Mark Structure?</h3>
+<p><strong>Data:</strong> Bilibili danmaku (time-synced comments) from 3
+videos: movie commentary (4973 comments), suspense drama (3533), pure
+hype montage (1200, control).</p>
+<p><strong>Method:</strong> Compare structure-keyword density
+(“伏笔/foreshadowing,” “原来/so that’s why,” “难怪/no wonder”) at
+narrative payoff points vs. arousal-matched control points (same comment
+volume, different structural role).</p>
+<table>
+<thead>
+<tr>
+<th>Video</th>
+<th>Type</th>
+<th>Keyword Ratio (payoff vs. control)</th>
+<th>Temporal Shuffle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Movie commentary</td>
+<td>Has structure</td>
+<td><strong>4.57×</strong></td>
+<td>Signal collapses ✓</td>
+</tr>
+<tr>
+<td>Suspense drama</td>
+<td>Has structure</td>
+<td><strong>4.41×</strong></td>
+<td>Signal collapses ✓</td>
+</tr>
+<tr>
+<td>Hype montage</td>
+<td>No structure</td>
+<td><strong>0.0×</strong> (no keywords)</td>
+<td>N/A</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Finding 4:</strong> Reader keywords reliably mark structural
+positions, independent of arousal, with correct discrimination (hype=0,
+narrative=4.5×).</p>
+<h3 id="is-the-signal-deeper-than-keywords">4.2 Is the Signal Deeper
+Than Keywords?</h3>
+<table>
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 36%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th>Test</th>
+<th>Method</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Semantic embedding (BGE)</td>
+<td>Per-comment max-sim to past</td>
+<td>1.05× (no signal)</td>
+</tr>
+<tr>
+<td>Content classification (DeepSeek)</td>
+<td>Non-keyword comments → judge structure</td>
+<td>29% (below chance)</td>
+</tr>
+<tr>
+<td>ASR subtitle content</td>
+<td>Video narration → judge structure</td>
+<td>57% (chance)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Finding 5:</strong> Remove keywords → zero signal remains.
+Structure marking exists <em>only</em> in the explicit annotation
+vocabulary, not in deeper semantic or content patterns.</p>
+<h3 id="novel-text-coarse-vs.-fine-granularity">4.3 Novel Text: Coarse
+vs. Fine Granularity</h3>
+<p><strong>Data:</strong> Qidian web novels (《诡秘之主》,《捞尸人》),
+chapter paragraphs paired with reader comments via API.</p>
+<table>
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 29%" />
+<col style="width: 27%" />
+<col style="width: 8%" />
+</colgroup>
+<thead>
+<tr>
+<th>Granularity</th>
+<th>Comparison</th>
+<th>Accuracy</th>
+<th>Significance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Coarse</strong> (cross-scene)</td>
+<td>Climax scene vs. daily scene</td>
+<td>100% (n=10)</td>
+<td>p&lt;0.001</td>
+</tr>
+<tr>
+<td><strong>Fine</strong> (adjacent paragraphs)</td>
+<td>Foreshadowing vs. neighbor</td>
+<td>44% (n=18)</td>
+<td>p=0.76 (chance)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Finding 6:</strong> Models distinguish <em>what kind of
+scene</em> contains structure (coarse), but cannot identify <em>which
+sentence</em> is foreshadowing within a scene (fine). Fine-grained
+“foreshadowing” is a reader’s retrospective attribution, not a textual
+prior.</p>
+<hr />
+<h2 id="unified-discussion">5. Unified Discussion</h2>
+<h3 id="the-explicit-implicit-boundary">5.1 The Explicit-Implicit
+Boundary</h3>
+<table>
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 41%" />
+<col style="width: 41%" />
+</colgroup>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Explicit (usable)</th>
+<th>Implicit (fails)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reasoning</td>
+<td>In-context facts → CoT 100%</td>
+<td>Weight-stored facts → CoT 0%</td>
+</tr>
+<tr>
+<td>Narrative</td>
+<td>Keyword annotations → 4.5×</td>
+<td>Non-keyword content → 1.05×</td>
+</tr>
+<tr>
+<td>Granularity</td>
+<td>Cross-scene → 100%</td>
+<td>Within-scene → 44% (chance)</td>
+</tr>
+</tbody>
+</table>
+<p>The pattern is consistent: when the relevant signal is
+<strong>surface-level and explicit</strong>, models succeed; when it
+requires <strong>compositional retrieval or latent
+interpretation</strong>, they fail.</p>
+<h3 id="theoretical-connection">5.2 Theoretical Connection</h3>
+<p>Current transformer architectures store knowledge as unidirectional
+associations in weight matrices. This representation supports: - Direct
+recall (A→B: single-hop 100%) - Pattern matching on explicit markers
+(keyword detection)</p>
+<p>But fails for: - Compositional chaining (A→B→C from weights) -
+Learning latent patterns without surface markers</p>
+<p>This is not a training data issue (facts <em>are</em> successfully
+memorized—single-hop proves it). It is a <em>representation</em> issue:
+the format in which knowledge is stored does not support the operations
+attempted.</p>
+<h3 id="practical-implications">5.3 Practical Implications</h3>
+<ol type="1">
+<li><strong>Memory systems:</strong> Use RAG (explicit, in-context) over
+parametric storage for any task requiring compositional retrieval. Our
+results provide direct experimental evidence for this design
+choice.</li>
+<li><strong>Narrative AI:</strong> Reader comments are useful as
+coarse-grained position labels (free annotation tool), but cannot serve
+as training signal for fine-grained narrative understanding models.</li>
+<li><strong>CoT limitations:</strong> CoT is not universally
+beneficial—it requires (a) sufficient model capacity and (b) facts
+accessible in context. It cannot compensate for retrieval failures from
+weights.</li>
+</ol>
+<hr />
+<h2 id="limitations">6. Limitations</h2>
+<ul>
+<li>Scale axis: Qwen 1.5B/3B same-family + DeepSeek as upper bound. 7B
+gap remains.</li>
+<li>Narrative study: 2 novels, 18 fine-grained pairs. Conclusion
+directionally clear (p=0.76) but larger-scale confirmation strengthens
+it.</li>
+<li>Fictional entities only (reasoning study). Real-world multi-hop may
+differ due to pretraining priors.</li>
+<li>Weight internalization via LoRA only; full fine-tuning may
+differ.</li>
+<li>Single relation type (“work partner”). Diverse relations may yield
+different composition profiles.</li>
+</ul>
+<hr />
+<h2 id="conclusion">7. Conclusion</h2>
+<p>We establish that the boundary between what models can and cannot do
+aligns with the explicit-implicit divide in knowledge form. Explicit
+knowledge—facts in context, structural positions marked by keywords—is
+compositionally accessible and learnable. Implicit knowledge—facts in
+weights, latent narrative structure—resists both compositional retrieval
+(even with CoT) and learning (even with strong models). This boundary
+does not scale away, suggesting it reflects architectural constraints
+rather than capacity limitations. Our anti-cheating methodology
+(fictional entities, gating controls, arousal matching, temporal
+shuffling) provides a template for rigorous evaluation of model
+capabilities at their boundaries.</p>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li>Berglund et al. (2023). The Reversal Curse: LLMs trained on “A is B”
+fail to learn “B is A.” arXiv:2309.12288.</li>
+<li>Allen-Zhu &amp; Li (2024). Physics of Language Models: Part 3,
+Knowledge Capacity. arXiv:2309.14316.</li>
+<li>Wei et al. (2022). Chain-of-thought prompting elicits reasoning in
+large language models.</li>
+<li>Lake &amp; Baroni (2018). Generalization without systematicity: On
+the compositional skills of sequence-to-sequence recurrent
+networks.</li>
+<li>Papalampidi et al. (2019). Movie Script Summarization as Graph-based
+Scene Extraction (TRIPOD).</li>
+<li>“Teaching Human Behavior Improves Content Understanding of LLMs”
+(2405.00942).</li>
+</ul>
+</body>
+</html>
