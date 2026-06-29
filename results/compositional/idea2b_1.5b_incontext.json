@@ -1,0 +1,10 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B", "store": "incontext", "mode": "multi-record",
+  "n_updates": 3, "n_people": 20, "seeds": [42, 43],
+  "note": "多记录干扰下三查询无区分度, 后被single-record证明是检索干扰非时序诅咒",
+  "results": {
+    "latest": {"direct": 0.35, "cot": 0.025},
+    "history_mid": {"direct": 0.30, "cot": 0.025},
+    "before": {"direct": 0.30, "cot": 0.025}
+  }
+}

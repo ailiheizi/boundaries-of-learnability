@@ -1,0 +1,26 @@
+{
+  "2": {
+    "comp_correct": 4,
+    "comp_total": 15,
+    "single_correct": 15,
+    "single_total": 15,
+    "cot_correct": 15,
+    "cot_total": 15
+  },
+  "3": {
+    "comp_correct": 1,
+    "comp_total": 15,
+    "single_correct": 15,
+    "single_total": 15,
+    "cot_correct": 15,
+    "cot_total": 15
+  },
+  "4": {
+    "comp_correct": 0,
+    "comp_total": 15,
+    "single_correct": 15,
+    "single_total": 15,
+    "cot_correct": 15,
+    "cot_total": 15
+  }
+}

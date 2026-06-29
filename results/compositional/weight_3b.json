@@ -1,0 +1,12 @@
+{
+  "model": "Qwen/Qwen2.5-3B",
+  "full_ft": false,
+  "n_chains": 20,
+  "epochs": 12,
+  "seeds": [42, 43],
+  "results": {
+    "2": { "single": 1.0, "comp": 0.05, "cot": 0.075 },
+    "3": { "single": 0.95, "comp": 0.0, "cot": 0.0 },
+    "4": { "single": 0.975, "comp": 0.0, "cot": 0.0 }
+  }
+}

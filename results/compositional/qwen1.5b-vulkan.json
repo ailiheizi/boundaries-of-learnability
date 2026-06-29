@@ -1,0 +1,22 @@
+{
+  "backend": "local",
+  "tag": "qwen1.5b-vulkan",
+  "n_per_hop": 8,
+  "results": {
+    "2": {
+      "single": 1.0,
+      "comp": 0.375,
+      "cot": 0.25
+    },
+    "3": {
+      "single": 1.0,
+      "comp": 0.125,
+      "cot": 0.625
+    },
+    "4": {
+      "single": 1.0,
+      "comp": 0.0,
+      "cot": 0.375
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model": "deepseek-chat",
+  "n_people": 20,
+  "results": {
+    "latest": {
+      "direct": 1.0,
+      "cot_plain": 1.0,
+      "cot_guided": 0.0
+    },
+    "history_mid": {
+      "direct": 1.0,
+      "cot_plain": 1.0,
+      "cot_guided": 0.025
+    },
+    "before": {
+      "direct": 0.85,
+      "cot_plain": 1.0,
+      "cot_guided": 1.0
+    }
+  }
+}

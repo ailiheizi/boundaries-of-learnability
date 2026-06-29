@@ -1,0 +1,10 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B", "store": "incontext", "mode": "single-record",
+  "n_updates": 3, "n_people": 20, "seeds": [42, 43],
+  "note": "消除干扰后历史可调取(反查直接100%); before的CoT崩(90%->5%)是小模型artifact, 被DeepSeek推翻",
+  "results": {
+    "latest": {"direct": 0.825, "cot": 0.975},
+    "history_mid": {"direct": 1.0, "cot": 0.525},
+    "before": {"direct": 0.90, "cot": 0.05}
+  }
+}

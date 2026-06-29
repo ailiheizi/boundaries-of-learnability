@@ -1,0 +1,27 @@
+{
+  "video": "前方高能！让世界感受这场视觉盛宴吧！",
+  "bvid": "BV1x441187u5",
+  "n_danmaku": 1200,
+  "n_pairs": 1,
+  "mean_ratio": 0,
+  "median_ratio": 0,
+  "go": false,
+  "pairs": [
+    {
+      "struct_bin": 2,
+      "control_bin": 5,
+      "struct": {
+        "total": 31,
+        "struct_count": 0,
+        "struct_ratio": 0.0,
+        "arousal_count": 2
+      },
+      "control": {
+        "total": 24,
+        "struct_count": 0,
+        "struct_ratio": 0.0,
+        "arousal_count": 0
+      }
+    }
+  ]
+}
