@@ -10,6 +10,7 @@ Two empirical studies revealing that language models can use explicit knowledge 
 - Models recall facts perfectly (single-hop 100%) but fail multi-hop composition (2-hop→4-hop: 27%→0%)
 - CoT rescues composition **only when facts are in-context** (scales 40%→65%→100% with model size)
 - **Weight-internalized facts: CoT completely fails (0-2%) regardless of scale**
+- **RAG baseline: step-by-step retrieval restores composition to 100% at all hop counts**
 - Bottleneck is *knowledge retrievability*, not *reasoning capacity*
 
 ### Study 2: Narrative Structure from Reader Comments  
@@ -22,6 +23,7 @@ Two empirical studies revealing that language models can use explicit knowledge 
 | | Explicit | Implicit |
 |---|---|---|
 | Reasoning | In-context CoT → 100% | Weight-stored → 0% |
+| Reasoning | RAG (retrieval per step) → 100% | Closed-book → 0% |
 | Narrative | Keyword annotations → 4.5× | Non-keyword content → 1.05× |
 
 ## Repository Structure

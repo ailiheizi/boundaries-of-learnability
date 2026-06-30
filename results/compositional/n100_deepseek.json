@@ -1,0 +1,33 @@
+{
+  "description": "DeepSeek in-context CoT + RAG + Blind, n=100/hop, seed=2026",
+  "n_per_hop": 100,
+  "results": {
+    "2": {
+      "cot_accuracy": 0.99,
+      "rag_accuracy": 1.0,
+      "blind_accuracy": 0.0,
+      "cot_correct": 99,
+      "rag_correct": 100,
+      "blind_correct": 0,
+      "total": 100
+    },
+    "3": {
+      "cot_accuracy": 1.0,
+      "rag_accuracy": 1.0,
+      "blind_accuracy": 0.0,
+      "cot_correct": 100,
+      "rag_correct": 100,
+      "blind_correct": 0,
+      "total": 100
+    },
+    "4": {
+      "cot_accuracy": 1.0,
+      "rag_accuracy": 1.0,
+      "blind_accuracy": 0.0,
+      "cot_correct": 100,
+      "rag_correct": 100,
+      "blind_correct": 0,
+      "total": 100
+    }
+  }
+}

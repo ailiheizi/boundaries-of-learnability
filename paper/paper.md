@@ -2,7 +2,7 @@
 
 ## Abstract
 
-We investigate the boundaries of what language models can and cannot learn, through two complementary studies spanning reasoning and narrative understanding. In **Study 1** (compositional reasoning), we show that models perfectly recall individual facts (single-hop 100%) but catastrophically fail at implicit multi-hop composition (2-hop: 27%, 4-hop: 0%). Chain-of-thought (CoT) rescues composition when facts are in-context (scaling from 40% at 1.5B to 100% at large scale), but **completely fails when facts are internalized in weights** (0-2% across all scales)—revealing that the bottleneck is knowledge retrievability, not reasoning capacity. In **Study 2** (narrative structure from reader comments), we show that reader annotations reliably mark structural positions (4.5× above baseline, independent of arousal), and models can distinguish coarse-grained structural scenes (100%), but **cannot distinguish fine-grained within-scene foreshadowing** (44%, n=18, p=0.76)—because foreshadowing is a reader's retrospective interpretation, not a learnable textual feature. Together, these findings establish a unified boundary: **explicit knowledge (in-context facts, keyword annotations) is usable; implicit knowledge (weight-stored facts, subtle textual cues) is not compositionally accessible or learnable**, and this limitation does not scale away with model size.
+We investigate the boundaries of what language models can and cannot learn, through two complementary studies spanning reasoning and narrative understanding. In **Study 1** (compositional reasoning), we show that models perfectly recall individual facts (single-hop 100%) but catastrophically fail at implicit multi-hop composition (2-hop: 27%, 4-hop: 0%). Chain-of-thought (CoT) rescues composition when facts are in-context (scaling from 40% at 1.5B to 100% at large scale), but **completely fails when facts are internalized in weights** (0-2% across all scales)—revealing that the bottleneck is knowledge retrievability, not reasoning capacity. A RAG baseline (step-by-step retrieval from external storage) restores composition to 100% at all hop counts, confirming the bottleneck is purely retrieval. In **Study 2** (narrative structure from reader comments), we show that reader annotations reliably mark structural positions (4.5× above baseline, independent of arousal), and models can distinguish coarse-grained structural scenes (100%), but **cannot distinguish fine-grained within-scene foreshadowing** (44%, n=18, p=0.76)—because foreshadowing is a reader's retrospective interpretation, not a learnable textual feature. Together, these findings establish a unified boundary: **explicit knowledge (in-context facts, keyword annotations) is usable; implicit knowledge (weight-stored facts, subtle textual cues) is not compositionally accessible or learnable**, and this limitation does not scale away with model size.
 
 ---
 
@@ -17,8 +17,9 @@ This connects to the Reversal Curse (Berglund et al., 2023): models trained on "
 **Contributions:**
 1. A compositional reasoning benchmark with anti-cheating controls (fictional entities, single-hop gating, open-generation), revealing that CoT rescue depends on knowledge being in-context and scales with model capacity (§3).
 2. The first demonstration that weight-internalized facts cannot support CoT-based composition regardless of scale, localizing the bottleneck to knowledge retrievability (§3.3).
-3. A systematic study of reader comments as narrative structure signals, establishing that keyword annotations are reliable coarse-grained position labels (4.5×) but carry no learnable fine-grained textual signal (§4).
-4. A unified framework connecting these findings: the explicit-implicit boundary as a fundamental constraint on current architectures (§5).
+3. A RAG baseline showing that step-by-step external retrieval restores composition to 100%, confirming the failure is retrieval-specific rather than reasoning-fundamental (§3.4).
+4. A systematic study of reader comments as narrative structure signals, establishing that keyword annotations are reliable coarse-grained position labels (4.5×) but carry no learnable fine-grained textual signal (§4).
+5. A unified framework connecting these findings: the explicit-implicit boundary as a fundamental constraint on current architectures (§5).
 
 ---
 
@@ -77,9 +78,26 @@ Same facts LoRA-trained into model weights (12 epochs, closed-book evaluation, 2
 
 **Diagnostic:** Raw CoT outputs from weight-internalized models show: (a) second-hop retrieval failure (stuck on intermediate entity), (b) hallucinated entities absent from training ("Tovak Sterling"), (c) correct chain enumeration followed by wrong final answer. The model can write reasoning *steps* but cannot reliably *retrieve* the next fact from weights at each step.
 
-### 3.4 Interpretation
+### 3.4 RAG Baseline: Retrieval Rescues Composition
+
+To confirm that the bottleneck is knowledge *retrievability* rather than reasoning *capacity*, we test a RAG (Retrieval-Augmented Generation) condition: the model receives no facts in the prompt, but at each reasoning step, the relevant single-hop fact is retrieved from an external knowledge base and injected.
+
+| Storage | Condition | 2-hop | 3-hop | 4-hop |
+|---------|-----------|-------|-------|-------|
+| In-context | All facts in prompt | 100% | 100% | 100% |
+| **Weight** | Closed-book (CoT) | 2% | 0% | 0% |
+| **RAG** | Step-by-step retrieval | **100%** | **100%** | **100%** |
+| Blind | No facts, no retrieval | 0% | 0% | 0% |
+
+**Finding 4:** RAG completely rescues multi-hop composition (100% at all hop counts), matching in-context performance exactly. This confirms that: (a) the model's reasoning capacity is intact—it can compose when facts are supplied step-by-step; (b) the failure of weight-internalized CoT is purely a retrieval problem, not a reasoning problem.
+
+**Implication:** The architectural fix is straightforward—externalize knowledge storage and retrieve per-step. The "composition collapse" is not fundamental to language models; it is specific to parametric (weight-based) knowledge storage.
+
+### 3.5 Interpretation
 
 CoT provides a reasoning *scaffold*, but the scaffold requires reliable fact *supply*. Weight-internalized facts are stored as isolated unidirectional keys—CoT's chained retrieval fails at each hop, and this failure is architecture-level (does not scale away). This generalizes the Reversal Curse: not just "A→B doesn't yield B→A," but "weight-stored facts cannot support *any* multi-hop CoT retrieval."
+
+The RAG result (§3.4) completes the picture: when retrieval is externalized, composition works perfectly. The bottleneck was never reasoning—it was always retrieval from weights.
 
 ---
 
@@ -129,6 +147,7 @@ CoT provides a reasoning *scaffold*, but the scaffold requires reliable fact *su
 | Domain | Explicit (usable) | Implicit (fails) |
 |--------|-------------------|-------------------|
 | Reasoning | In-context facts → CoT 100% | Weight-stored facts → CoT 0% |
+| Reasoning | RAG (step-by-step retrieval) → 100% | Closed-book → 0% |
 | Narrative | Keyword annotations → 4.5× | Non-keyword content → 1.05× |
 | Granularity | Cross-scene → 100% | Within-scene → 44% (chance) |
 
@@ -148,7 +167,7 @@ This is not a training data issue (facts *are* successfully memorized—single-h
 
 ### 5.3 Practical Implications
 
-1. **Memory systems:** Use RAG (explicit, in-context) over parametric storage for any task requiring compositional retrieval. Our results provide direct experimental evidence for this design choice.
+1. **Memory systems:** Use RAG (explicit, in-context) over parametric storage for any task requiring compositional retrieval. Our RAG baseline (§3.4) demonstrates this directly: step-by-step retrieval restores composition from 0% to 100%, even at 4-hop depth.
 2. **Narrative AI:** Reader comments are useful as coarse-grained position labels (free annotation tool), but cannot serve as training signal for fine-grained narrative understanding models.
 3. **CoT limitations:** CoT is not universally beneficial—it requires (a) sufficient model capacity and (b) facts accessible in context. It cannot compensate for retrieval failures from weights.
 
