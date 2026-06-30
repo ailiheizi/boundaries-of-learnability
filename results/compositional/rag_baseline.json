@@ -1,0 +1,19 @@
+{
+  "results": {
+    "2": {
+      "incontext": 1.0,
+      "rag": 1.0,
+      "blind": 0.0
+    },
+    "3": {
+      "incontext": 1.0,
+      "rag": 1.0,
+      "blind": 0.0
+    },
+    "4": {
+      "incontext": 1.0,
+      "rag": 1.0,
+      "blind": 0.0
+    }
+  }
+}
