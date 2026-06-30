@@ -1,5 +1,7 @@
 # Boundaries of Learnability
 
+[![DOI](https://zenodo.org/badge/1284425541.svg)](https://doi.org/10.5281/zenodo.21073254)
+
 **When Explicit Knowledge Enables and Implicit Knowledge Fails**
 
 Two empirical studies revealing that language models can use explicit knowledge (in-context facts, keyword annotations) but fail with implicit knowledge (weight-stored facts, subtle textual features) — and this boundary does not scale away.
