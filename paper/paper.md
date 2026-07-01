@@ -71,6 +71,8 @@ All facts presented in the prompt. Three conditions: direct answer, CoT.
 
 ### 3.3 Weight-Internalized Results: Storage Axis
 
+![The Storage-Reasoning Dissociation: facts are recalled perfectly from weights (98%) but cannot be composed via CoT (0-2%), while in-context CoT scales to 100%](figures/fig1_dissociation.png)
+
 Same facts LoRA-trained into model weights (12–15 epochs, closed-book evaluation, 2 seeds × 20–30 chains).
 
 | Storage | Model | Single-hop | Direct (2/3/4) | CoT (2/3/4) |
@@ -100,6 +102,8 @@ We test a RAG (Retrieval-Augmented Generation) condition: the model receives no 
 
 **Finding 4:** When facts are supplied at each hop—whether in-context or via external retrieval—composition succeeds (100%). We note this RAG result is partly *by construction*: our retrieval procedure supplies the hop decomposition externally and issues one single-hop lookup per hop, over facts already recalled at ~100% single-hop. RAG therefore isolates the case where the compositional *plan* is provided externally; it does not test whether the model can plan composition itself. Its value here is as a positive control confirming the model can chain supplied facts.
 
+![Composition by condition: RAG (step-by-step retrieval) restores composition to 100% at all hops, matching in-context CoT, while weight-stored facts stay at 0%](figures/fig2_rag_control.png)
+
 ### 3.5 Interpretation: A Storage-Dependent Dissociation
 
 Our central finding is a **dissociation**, not a reassignment of the bottleneck. Holding the reasoning procedure fixed (CoT) and varying only where facts live:
@@ -118,6 +122,8 @@ The RAG result (§3.4) provides a positive control: when retrieval is externaliz
 ---
 
 ## 4. Study 2: Narrative Structure Learnability
+
+![Left: Keyword annotations mark structure at 4.5× above baseline, while semantic content alone shows no signal (1.05×). Right: Coarse-grained classification reaches 100%, but fine-grained within-scene foreshadowing detection equals chance (44%).](figures/fig3_narrative.png)
 
 ### 4.1 Can Reader Reactions Mark Structure?
 

@@ -93,7 +93,13 @@ def main():
 
     def fresh(seed):
         torch.manual_seed(seed)
-        m=AutoModelForCausalLM.from_pretrained(args.model,torch_dtype=torch.float32).to(dev)
+        # For large full-FT models, use bf16 + gradient checkpointing to fit in VRAM
+        big = args.full_ft and any(s in args.model for s in ["7B","7b","14B","14b"])
+        dtype = torch.bfloat16 if (big and dev=="cuda") else torch.float32
+        m=AutoModelForCausalLM.from_pretrained(args.model,torch_dtype=dtype).to(dev)
+        if big:
+            m.gradient_checkpointing_enable()
+            m.config.use_cache=False
         if not args.full_ft:
             from peft import LoraConfig, get_peft_model
             ml=args.model.lower()
