@@ -1,0 +1,131 @@
+{
+  "model": "qwen1.5b",
+  "accuracy": 0.11764705882352941,
+  "deepseek_accuracy": 0.6470588235294118,
+  "n": 17,
+  "results": {
+    "correct": 2,
+    "total": 17,
+    "details": [
+      {
+        "question": "从Alice开始，经过两跳搭档关系后，到达的人是谁？",
+        "answer": "David",
+        "model_output": "<全名>",
+        "correct": false,
+        "deepseek_cot": false
+      },
+      {
+        "question": "从陈默开始，沿着搭档关系走三步，最终到达的人是谁？",
+        "answer": "张强",
+        "model_output": "从陈默开始，沿着搭档关系走三步，最终到达的人是赵敏。",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "住在上海的那个人的搭档的搭档是谁？",
+        "answer": "刘八",
+        "model_output": "赵六",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "从Alice开始，经过3次搭档关系查询，最终到达的人是谁？",
+        "answer": "David",
+        "model_output": "Frank",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "从Alice开始，经过两跳（即Alice → ? → ?），到达的人是谁？",
+        "answer": "David",
+        "model_output": "Charlie",
+        "correct": false,
+        "deepseek_cot": false
+      },
+      {
+        "question": "住在蓝色房子那个人的搭档是谁？",
+        "answer": "赵强",
+        "model_output": "赵强",
+        "correct": true,
+        "deepseek_cot": true
+      },
+      {
+        "question": "从张伟出发，经过两跳搭档关系，最终到达的人是谁？",
+        "answer": "陈静",
+        "model_output": "最终答案：刘洋",
+        "correct": false,
+        "deepseek_cot": false
+      },
+      {
+        "question": "张三的妻子的搭档是谁？",
+        "answer": "钱七",
+        "model_output": "李四",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "Alice在2020年合作过的搭档中，谁在2021年与Grace合作过？",
+        "answer": "Eve",
+        "model_output": "Charlie",
+        "correct": false,
+        "deepseek_cot": false
+      },
+      {
+        "question": "Alice在2023年合作的项目中，她的搭档的搭档是谁？",
+        "answer": "David",
+        "model_output": "Charlie",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "从B开始，沿着“导师”关系链走两步，最终到达谁？",
+        "answer": "D",
+        "model_output": "'最终答案: G'",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "从小明开始，依次询问每个实体的好友，经过两跳后到达的实体是谁？",
+        "answer": "小强",
+        "model_output": "'最终答案: 小强和小明'",
+        "correct": true,
+        "deepseek_cot": false
+      },
+      {
+        "question": "从小明出发，经过3跳（即查询三次）到达的人是谁？",
+        "answer": "小丽",
+        "model_output": "小华",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "从 Alice 开始，经过3次搭档关系查询，最终会到达谁？",
+        "answer": "David",
+        "model_output": "Frank",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "从Alice开始，沿着搭档关系走三步，最后到达谁？",
+        "answer": "David",
+        "model_output": "是：最终答案: <全名>",
+        "correct": false,
+        "deepseek_cot": true
+      },
+      {
+        "question": "在《星际迷航》中，Spock的搭档的搭档是谁？",
+        "answer": "Han Solo",
+        "model_output": "<全名>",
+        "correct": false,
+        "deepseek_cot": false
+      },
+      {
+        "question": "2023年，Alice合作完成项目X的搭档，在2024年与谁合作完成了项目？",
+        "answer": "Eve",
+        "model_output": "Charlie",
+        "correct": false,
+        "deepseek_cot": true
+      }
+    ]
+  }
+}

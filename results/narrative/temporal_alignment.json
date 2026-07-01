@@ -1,0 +1,341 @@
+{
+  "video": "全程细节伏笔隐喻？一刷看不懂，二刷就上头的高智商犯罪片！《惊天魔盗团》",
+  "duration": 2457,
+  "bin_size": 30,
+  "total_classified": 277,
+  "confidence_threshold": 0.6,
+  "peaks": {
+    "整体": {
+      "peak_bin": 12,
+      "peak_time": 360,
+      "peak_density": 1.0,
+      "mean_density": 0.338267323889917,
+      "peak_ratio": 2.956241792735003
+    },
+    "细节": {
+      "peak_bin": 8,
+      "peak_time": 240,
+      "peak_density": 1.0,
+      "mean_density": 0.10119825617258224,
+      "peak_ratio": 9.88159319953708
+    },
+    "演技": {
+      "peak_bin": 74,
+      "peak_time": 2220,
+      "peak_density": 1.0,
+      "mean_density": 0.027151651301202007,
+      "peak_ratio": 36.83017246010853
+    },
+    "情感共鸣": {
+      "peak_bin": 49,
+      "peak_time": 1470,
+      "peak_density": 1.0,
+      "mean_density": 0.04709709417668339,
+      "peak_ratio": 21.232732453695103
+    },
+    "剧情": {
+      "peak_bin": 14,
+      "peak_time": 420,
+      "peak_density": 1.0,
+      "mean_density": 0.06006048135677765,
+      "peak_ratio": 16.649883207889957
+    },
+    "音乐": {
+      "peak_bin": 8,
+      "peak_time": 240,
+      "peak_density": 1.0,
+      "mean_density": 0.01263157894736842,
+      "peak_ratio": 79.16666666666667
+    }
+  },
+  "timeline_summary": [
+    {
+      "start": 0,
+      "end": 30,
+      "count": 11,
+      "top_dim": "整体"
+    },
+    {
+      "start": 30,
+      "end": 60,
+      "count": 28,
+      "top_dim": "细节"
+    },
+    {
+      "start": 60,
+      "end": 90,
+      "count": 95,
+      "top_dim": "细节"
+    },
+    {
+      "start": 90,
+      "end": 120,
+      "count": 22,
+      "top_dim": "细节"
+    },
+    {
+      "start": 120,
+      "end": 150,
+      "count": 5,
+      "top_dim": "细节"
+    },
+    {
+      "start": 150,
+      "end": 180,
+      "count": 4,
+      "top_dim": "整体"
+    },
+    {
+      "start": 180,
+      "end": 210,
+      "count": 8,
+      "top_dim": "情感共鸣"
+    },
+    {
+      "start": 210,
+      "end": 240,
+      "count": 3,
+      "top_dim": "情感共鸣"
+    },
+    {
+      "start": 240,
+      "end": 270,
+      "count": 1,
+      "top_dim": "细节"
+    },
+    {
+      "start": 300,
+      "end": 330,
+      "count": 3,
+      "top_dim": "音乐"
+    },
+    {
+      "start": 360,
+      "end": 390,
+      "count": 2,
+      "top_dim": "整体"
+    },
+    {
+      "start": 390,
+      "end": 420,
+      "count": 1,
+      "top_dim": "整体"
+    },
+    {
+      "start": 420,
+      "end": 450,
+      "count": 1,
+      "top_dim": "整体"
+    },
+    {
+      "start": 450,
+      "end": 480,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 480,
+      "end": 510,
+      "count": 2,
+      "top_dim": "整体"
+    },
+    {
+      "start": 510,
+      "end": 540,
+      "count": 3,
+      "top_dim": "细节"
+    },
+    {
+      "start": 540,
+      "end": 570,
+      "count": 2,
+      "top_dim": "整体"
+    },
+    {
+      "start": 570,
+      "end": 600,
+      "count": 1,
+      "top_dim": "整体"
+    },
+    {
+      "start": 600,
+      "end": 630,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 630,
+      "end": 660,
+      "count": 7,
+      "top_dim": "整体"
+    },
+    {
+      "start": 660,
+      "end": 690,
+      "count": 9,
+      "top_dim": "整体"
+    },
+    {
+      "start": 780,
+      "end": 810,
+      "count": 1,
+      "top_dim": "整体"
+    },
+    {
+      "start": 810,
+      "end": 840,
+      "count": 4,
+      "top_dim": "整体"
+    },
+    {
+      "start": 870,
+      "end": 900,
+      "count": 1,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1020,
+      "end": 1050,
+      "count": 2,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1050,
+      "end": 1080,
+      "count": 1,
+      "top_dim": "细节"
+    },
+    {
+      "start": 1140,
+      "end": 1170,
+      "count": 2,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1170,
+      "end": 1200,
+      "count": 4,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1290,
+      "end": 1320,
+      "count": 1,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1380,
+      "end": 1410,
+      "count": 3,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1470,
+      "end": 1500,
+      "count": 1,
+      "top_dim": "情感共鸣"
+    },
+    {
+      "start": 1560,
+      "end": 1590,
+      "count": 1,
+      "top_dim": "细节"
+    },
+    {
+      "start": 1590,
+      "end": 1620,
+      "count": 1,
+      "top_dim": "细节"
+    },
+    {
+      "start": 1710,
+      "end": 1740,
+      "count": 1,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1740,
+      "end": 1770,
+      "count": 2,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1770,
+      "end": 1800,
+      "count": 3,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1920,
+      "end": 1950,
+      "count": 2,
+      "top_dim": "情感共鸣"
+    },
+    {
+      "start": 1950,
+      "end": 1980,
+      "count": 3,
+      "top_dim": "整体"
+    },
+    {
+      "start": 1980,
+      "end": 2010,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2010,
+      "end": 2040,
+      "count": 7,
+      "top_dim": "整体"
+    },
+    {
+      "start": 2070,
+      "end": 2100,
+      "count": 2,
+      "top_dim": "整体"
+    },
+    {
+      "start": 2100,
+      "end": 2130,
+      "count": 2,
+      "top_dim": "整体"
+    },
+    {
+      "start": 2190,
+      "end": 2220,
+      "count": 1,
+      "top_dim": "整体"
+    },
+    {
+      "start": 2220,
+      "end": 2250,
+      "count": 1,
+      "top_dim": "演技"
+    },
+    {
+      "start": 2250,
+      "end": 2280,
+      "count": 1,
+      "top_dim": "演技"
+    },
+    {
+      "start": 2370,
+      "end": 2400,
+      "count": 3,
+      "top_dim": "整体"
+    },
+    {
+      "start": 2400,
+      "end": 2430,
+      "count": 8,
+      "top_dim": "整体"
+    },
+    {
+      "start": 2430,
+      "end": 2460,
+      "count": 7,
+      "top_dim": "整体"
+    }
+  ]
+}

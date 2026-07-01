@@ -1,0 +1,131 @@
+{
+  "seed": 2026,
+  "samples_per_round": 10,
+  "results": [
+    {
+      "level": 0,
+      "description": "2-hop, 1干扰链, 单关系",
+      "hops": 2,
+      "CoT(in-ctx)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG(逐步)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG+CoT": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "多层级": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "level": 1,
+      "description": "3-hop, 2干扰链, 单关系",
+      "hops": 3,
+      "CoT(in-ctx)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG(逐步)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG+CoT": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "多层级": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "level": 2,
+      "description": "4-hop, 3干扰链, 单关系",
+      "hops": 4,
+      "CoT(in-ctx)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG(逐步)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG+CoT": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "多层级": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "level": 3,
+      "description": "5-hop, 4干扰链, 单关系",
+      "hops": 5,
+      "CoT(in-ctx)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG(逐步)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG+CoT": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "多层级": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      }
+    },
+    {
+      "level": 4,
+      "description": "4-hop, 5干扰链, 2种关系",
+      "hops": 4,
+      "CoT(in-ctx)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG(逐步)": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      },
+      "RAG+CoT": {
+        "correct": 9,
+        "total": 10,
+        "accuracy": 0.9
+      },
+      "多层级": {
+        "correct": 10,
+        "total": 10,
+        "accuracy": 1.0
+      }
+    }
+  ]
+}

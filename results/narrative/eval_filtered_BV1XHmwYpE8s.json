@@ -1,0 +1,325 @@
+{
+  "video": "反转悬疑神剧！凶手死后继续作案，福尔摩斯来都得懵圈！",
+  "total_raw": 3533,
+  "after_rule_filter": 2423,
+  "sample_classified": 200,
+  "evaluative_count": 89,
+  "evaluative_rate": 0.445,
+  "dimension_distribution": {
+    "画面": 8,
+    "剧情": 50,
+    "整体": 13,
+    "演技": 5,
+    "节奏": 3,
+    "细节": 2,
+    "情感共鸣": 4,
+    "叙事手法": 4
+  },
+  "polarity_distribution": {
+    "+": 14,
+    "0": 24,
+    "-": 51
+  },
+  "evaluative_samples": [
+    {
+      "t": 10.603,
+      "text": "女警真好看",
+      "dimension": "画面",
+      "polarity": "+"
+    },
+    {
+      "t": 95.892,
+      "text": "叶子自己带安全带，劫走不合适吧",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 196.925,
+      "text": "讲的啥玩意啊",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 219.257,
+      "text": "无敌了，果然是岛国剧",
+      "dimension": "整体",
+      "polarity": "+"
+    },
+    {
+      "t": 222.227,
+      "text": "有点癫 剧情不够 变态来凑",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 226.798,
+      "text": "真不愧是日剧",
+      "dimension": "整体",
+      "polarity": "0"
+    },
+    {
+      "t": 289.512,
+      "text": "老天这个眼睛也太大了",
+      "dimension": "画面",
+      "polarity": "0"
+    },
+    {
+      "t": 320.607,
+      "text": "这还能跑掉哒？警察都不留人守后门的嘛",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 322.186,
+      "text": "底下不留人驻守吗？好离谱",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 323.242,
+      "text": "他简直是个超人！",
+      "dimension": "演技",
+      "polarity": "+"
+    },
+    {
+      "t": 333.188,
+      "text": "好扯的设定",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 337.39,
+      "text": "超人!~",
+      "dimension": "演技",
+      "polarity": "+"
+    },
+    {
+      "t": 365.059,
+      "text": "猜对了 英二那么怂怎么可能毫不犹豫跳三楼",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 371.061,
+      "text": "人格变了脸都变帅了",
+      "dimension": "画面",
+      "polarity": "+"
+    },
+    {
+      "t": 380.038,
+      "text": "英三不应该认识奈美啊，只有英二认识奈美啊",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 416.75,
+      "text": "直接肉体毁灭就完了",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 453.653,
+      "text": "英三应该是受保护的那个",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 490.054,
+      "text": "也可能是模仿犯罪啊",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 504.262,
+      "text": "莲花怎么确定睡一觉就会被替换人格，这合理吗",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 525.12,
+      "text": "0帧起手没法躲",
+      "dimension": "节奏",
+      "polarity": "0"
+    },
+    {
+      "t": 626.681,
+      "text": "莲花自己就是杀人魔",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 630.75,
+      "text": "年龄对不上吧，那不是小孩子的时候吗",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 632.052,
+      "text": "当年这么小，怎么可能是八野先生？",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 633.567,
+      "text": "我猜对了，果然三是为了查案",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 703.358,
+      "text": "火人开大弹到房子着火了",
+      "dimension": "画面",
+      "polarity": "0"
+    },
+    {
+      "t": 968.0,
+      "text": "剧情开始崩坏",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 979.25,
+      "text": "？？？？？好反转哦",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 988.056,
+      "text": "越来越看不懂",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1014.037,
+      "text": "有点莫名其妙的",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1034.061,
+      "text": "CPU都烧起来了",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1035.127,
+      "text": "鬼故事，进度条还没过半",
+      "dimension": "节奏",
+      "polarity": "0"
+    },
+    {
+      "t": 1045.215,
+      "text": "额看懵了",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1062.078,
+      "text": "还能这样",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 1083.177,
+      "text": "剧情有点强行了",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1094.096,
+      "text": "这TM是没转硬反转吗",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1178.773,
+      "text": "枕头不应该透气吗？",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 1185.459,
+      "text": "啊啊啊啊什么鬼",
+      "dimension": "整体",
+      "polarity": "-"
+    },
+    {
+      "t": 1200.322,
+      "text": "等一等，桃井怎么会比假装从外地赶回来的老袁更晚到达",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1206.307,
+      "text": "这样的人怎么能够当刑警",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1217.908,
+      "text": "这是老刑警？",
+      "dimension": "演技",
+      "polarity": "-"
+    },
+    {
+      "t": 1237.009,
+      "text": "奈美有点太正常了",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 1238.684,
+      "text": "血液中的白细胞的细胞核是可以提取DNA的",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 1281.803,
+      "text": "樱井好好看",
+      "dimension": "画面",
+      "polarity": "+"
+    },
+    {
+      "t": 1286.207,
+      "text": "？还有高手？不过好帅",
+      "dimension": "画面",
+      "polarity": "+"
+    },
+    {
+      "t": 1286.74,
+      "text": "这跟抗日神剧有什么区别",
+      "dimension": "整体",
+      "polarity": "-"
+    },
+    {
+      "t": 1290.844,
+      "text": "BUG真的多",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1299.653,
+      "text": "那你也不是忽然出现吧，这个桥一眼看到底了",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1317.22,
+      "text": "莫名其妙的强行反转，神经",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 1347.971,
+      "text": "什么鬼玩意",
+      "dimension": "整体",
+      "polarity": "-"
+    },
+    {
+      "t": 1355.466,
+      "text": "发癫啊，真无厘头",
+      "dimension": "剧情",
+      "polarity": "-"
+    }
+  ]
+}

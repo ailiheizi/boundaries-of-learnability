@@ -1,0 +1,345 @@
+{
+  "video": "反转悬疑神剧！凶手死后继续作案，福尔摩斯来都得懵圈！",
+  "duration": 2325,
+  "bin_size": 30,
+  "total_classified": 165,
+  "confidence_threshold": 0.6,
+  "peaks": {
+    "剧情": {
+      "peak_bin": 0,
+      "peak_time": 0,
+      "peak_density": 1.0,
+      "mean_density": 0.6184472934472934,
+      "peak_ratio": 1.616952666129218
+    },
+    "整体": {
+      "peak_bin": 65,
+      "peak_time": 1950,
+      "peak_density": 0.5,
+      "mean_density": 0.01917057902973396,
+      "peak_ratio": 26.081632653061227
+    },
+    "演技": {
+      "peak_bin": 0,
+      "peak_time": 0,
+      "peak_density": 0.2,
+      "mean_density": 0.0029411764705882353,
+      "peak_ratio": 20.0
+    },
+    "画面": {
+      "peak_bin": 37,
+      "peak_time": 1110,
+      "peak_density": 1.0,
+      "mean_density": 0.01818181818181818,
+      "peak_ratio": 55.0
+    }
+  },
+  "timeline_summary": [
+    {
+      "start": 0,
+      "end": 30,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 120,
+      "end": 150,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 150,
+      "end": 180,
+      "count": 3,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 180,
+      "end": 210,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 210,
+      "end": 240,
+      "count": 8,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 270,
+      "end": 300,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 300,
+      "end": 330,
+      "count": 10,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 330,
+      "end": 360,
+      "count": 5,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 360,
+      "end": 390,
+      "count": 5,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 390,
+      "end": 420,
+      "count": 6,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 420,
+      "end": 450,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 450,
+      "end": 480,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 480,
+      "end": 510,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 510,
+      "end": 540,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 600,
+      "end": 630,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 630,
+      "end": 660,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 660,
+      "end": 690,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 690,
+      "end": 720,
+      "count": 3,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 720,
+      "end": 750,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 870,
+      "end": 900,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 900,
+      "end": 930,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 960,
+      "end": 990,
+      "count": 4,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 990,
+      "end": 1020,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1020,
+      "end": 1050,
+      "count": 5,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1050,
+      "end": 1080,
+      "count": 4,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1080,
+      "end": 1110,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1140,
+      "end": 1170,
+      "count": 4,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1170,
+      "end": 1200,
+      "count": 3,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1200,
+      "end": 1230,
+      "count": 3,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1230,
+      "end": 1260,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1260,
+      "end": 1290,
+      "count": 4,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1290,
+      "end": 1320,
+      "count": 16,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1320,
+      "end": 1350,
+      "count": 4,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1350,
+      "end": 1380,
+      "count": 15,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1380,
+      "end": 1410,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1410,
+      "end": 1440,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1470,
+      "end": 1500,
+      "count": 1,
+      "top_dim": "画面"
+    },
+    {
+      "start": 1500,
+      "end": 1530,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1650,
+      "end": 1680,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1710,
+      "end": 1740,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1770,
+      "end": 1800,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1920,
+      "end": 1950,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 1980,
+      "end": 2010,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2040,
+      "end": 2070,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2070,
+      "end": 2100,
+      "count": 2,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2100,
+      "end": 2130,
+      "count": 1,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2160,
+      "end": 2190,
+      "count": 4,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2190,
+      "end": 2220,
+      "count": 9,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2220,
+      "end": 2250,
+      "count": 3,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2250,
+      "end": 2280,
+      "count": 6,
+      "top_dim": "剧情"
+    },
+    {
+      "start": 2310,
+      "end": 2340,
+      "count": 1,
+      "top_dim": "剧情"
+    }
+  ]
+}

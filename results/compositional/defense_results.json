@@ -1,0 +1,225 @@
+{
+  "results": {
+    "CoT": {
+      "correct": 10,
+      "total": 15
+    },
+    "RAG-naive": {
+      "correct": 6,
+      "total": 15
+    },
+    "RAG-disambig": {
+      "correct": 7,
+      "total": 15
+    },
+    "RAG-condaware": {
+      "correct": 8,
+      "total": 15
+    },
+    "RAG-resolve": {
+      "correct": 8,
+      "total": 15
+    },
+    "RAG-full": {
+      "correct": 8,
+      "total": 15
+    }
+  },
+  "details": [
+    {
+      "attack_type": "多值歧义：起始实体有多个搭档，导致RAG选择错误路径",
+      "question": "从 Alice 开始，经过两跳搭档关系，最终到达的人是谁？",
+      "answer": "Eve",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": false,
+        "RAG-disambig": false,
+        "RAG-condaware": false,
+        "RAG-resolve": false,
+        "RAG-full": false
+      }
+    },
+    {
+      "attack_type": "多值歧义（同一个人在不同关系下有多条搭档链）",
+      "question": "从林悦开始，查她的搭档的搭档的搭档是谁？",
+      "answer": "周涛",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": true,
+        "RAG-disambig": true,
+        "RAG-condaware": true,
+        "RAG-resolve": true,
+        "RAG-full": true
+      }
+    },
+    {
+      "attack_type": "多值歧义：同一个人有多条搭档关系链，RAG随机选择一条导致错误路径",
+      "question": "林月的搭档的搭档是谁？",
+      "answer": "赵雪",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": true,
+        "RAG-disambig": true,
+        "RAG-condaware": true,
+        "RAG-resolve": true,
+        "RAG-full": true
+      }
+    },
+    {
+      "attack_type": "共享实体：Bob同时连接两条链",
+      "question": "从Alice出发，经过3次搭档关系查询后，最终到达的人是谁？",
+      "answer": "Eve",
+      "strategies": {
+        "CoT": false,
+        "RAG-naive": false,
+        "RAG-disambig": true,
+        "RAG-condaware": true,
+        "RAG-resolve": true,
+        "RAG-full": true
+      }
+    },
+    {
+      "attack_type": "共享实体导致分支错误",
+      "question": "Alice的丈夫的儿子的妹妹的母亲是谁？",
+      "answer": "Diana",
+      "strategies": {
+        "CoT": false,
+        "RAG-naive": false,
+        "RAG-disambig": false,
+        "RAG-condaware": false,
+        "RAG-resolve": false,
+        "RAG-full": false
+      }
+    },
+    {
+      "attack_type": "共享实体（Bob 同时连接 Charlie 和 Frank）",
+      "question": "从 Alice 开始，经过两跳后到达的实体是谁？",
+      "answer": "Charlie",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": false,
+        "RAG-disambig": false,
+        "RAG-condaware": false,
+        "RAG-resolve": false,
+        "RAG-full": false
+      }
+    },
+    {
+      "attack_type": "条件依赖：关系带项目限定，简单检索忽略条件",
+      "question": "在项目Alpha中，Alice的搭档的搭档是谁？",
+      "answer": "Alice",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": false,
+        "RAG-disambig": false,
+        "RAG-condaware": true,
+        "RAG-resolve": true,
+        "RAG-full": true
+      }
+    },
+    {
+      "attack_type": "条件依赖：关系带项目限定，简单检索忽略条件",
+      "question": "在项目A中，张三的搭档的搭档是谁？",
+      "answer": "张三",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": false,
+        "RAG-disambig": false,
+        "RAG-condaware": false,
+        "RAG-resolve": false,
+        "RAG-full": false
+      }
+    },
+    {
+      "attack_type": "条件依赖: 关系带项目限定，简单检索忽略条件",
+      "question": "Alice在项目Alpha中的搭档Bob，他的搭档Charlie在哪个项目中与David合作？",
+      "answer": "Gamma",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": true,
+        "RAG-disambig": true,
+        "RAG-condaware": true,
+        "RAG-resolve": true,
+        "RAG-full": true
+      }
+    },
+    {
+      "attack_type": "间接引用+多跳指代混淆",
+      "question": "住在河边小屋的那个人最好的朋友工作的图书馆的管理员的邻居是谁？",
+      "answer": "王磊",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": false,
+        "RAG-disambig": false,
+        "RAG-condaware": false,
+        "RAG-resolve": false,
+        "RAG-full": false
+      }
+    },
+    {
+      "attack_type": "间接引用 + 关系混淆",
+      "question": "请问住在上海的那个人认识谁？",
+      "answer": "小王",
+      "strategies": {
+        "CoT": false,
+        "RAG-naive": false,
+        "RAG-disambig": false,
+        "RAG-condaware": false,
+        "RAG-resolve": false,
+        "RAG-full": false
+      }
+    },
+    {
+      "attack_type": "间接引用与关系混淆",
+      "question": "住在 Green Street 的蓝色房子里的人的搭档的搭档是谁？",
+      "answer": "Eve",
+      "strategies": {
+        "CoT": false,
+        "RAG-naive": false,
+        "RAG-disambig": false,
+        "RAG-condaware": false,
+        "RAG-resolve": false,
+        "RAG-full": false
+      }
+    },
+    {
+      "attack_type": "逆向陷阱：Bob同时在两条链上（Alice→Bob→Charlie→David 和 Alice→Bob→Eve→Frank→Grace）",
+      "question": "从Alice开始，沿着搭档关系走三步，最终到达谁？",
+      "answer": "David",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": true,
+        "RAG-disambig": true,
+        "RAG-condaware": true,
+        "RAG-resolve": true,
+        "RAG-full": true
+      }
+    },
+    {
+      "attack_type": "逆向陷阱：正向链A→B→C存在，但问题问的是B→?时有歧义（B同时在两条链上）",
+      "question": "谁是赫拉克勒斯的父亲？",
+      "answer": "宙斯",
+      "strategies": {
+        "CoT": true,
+        "RAG-naive": true,
+        "RAG-disambig": true,
+        "RAG-condaware": true,
+        "RAG-resolve": true,
+        "RAG-full": true
+      }
+    },
+    {
+      "attack_type": "逆向陷阱：Bob同时在两条搭档链上",
+      "question": "从Alice开始，按照搭档关系走两步，最后到达谁？",
+      "answer": "David",
+      "strategies": {
+        "CoT": false,
+        "RAG-naive": true,
+        "RAG-disambig": true,
+        "RAG-condaware": true,
+        "RAG-resolve": true,
+        "RAG-full": true
+      }
+    }
+  ]
+}

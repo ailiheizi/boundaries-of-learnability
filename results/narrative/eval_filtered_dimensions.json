@@ -1,0 +1,326 @@
+{
+  "video": "全程细节伏笔隐喻？一刷看不懂，二刷就上头的高智商犯罪片！《惊天魔盗团》",
+  "total_raw": 4973,
+  "after_rule_filter": 2912,
+  "sample_classified": 300,
+  "evaluative_count": 120,
+  "evaluative_rate": 0.4,
+  "dimension_distribution": {
+    "演技": 14,
+    "剧情": 44,
+    "整体": 20,
+    "画面": 9,
+    "细节": 18,
+    "音乐": 3,
+    "情感共鸣": 5,
+    "叙事手法": 5,
+    "节奏": 2
+  },
+  "polarity_distribution": {
+    "-": 28,
+    "0": 66,
+    "+": 26
+  },
+  "evaluative_samples": [
+    {
+      "t": 2.832,
+      "text": "惊天倒模团",
+      "dimension": "演技",
+      "polarity": "-"
+    },
+    {
+      "t": 5.619,
+      "text": "总有人打着魔术的幌子施展魔法",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 10.484,
+      "text": "这部巨好看。。",
+      "dimension": "整体",
+      "polarity": "+"
+    },
+    {
+      "t": 15.739,
+      "text": "国外先进偷盗技术",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 18.309,
+      "text": "台下全是非洲人民",
+      "dimension": "画面",
+      "polarity": "0"
+    },
+    {
+      "t": 23.44,
+      "text": "第二部周董还打了个酱油",
+      "dimension": "演技",
+      "polarity": "0"
+    },
+    {
+      "t": 35.331,
+      "text": "好看好看！！",
+      "dimension": "整体",
+      "polarity": "+"
+    },
+    {
+      "t": 44.531,
+      "text": "7.8的外国片算高吗？",
+      "dimension": "整体",
+      "polarity": "0"
+    },
+    {
+      "t": 57.834,
+      "text": "慢放发现方块7连续出现了几次",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 59.34,
+      "text": "翻到某一张的时候停顿了一下",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 60.539,
+      "text": "红桃7出现次数最多",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 66.306,
+      "text": "就是强选，摆牌的时候就有说法的，导致落得快只能看到那张牌",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 73.747,
+      "text": "电影效果，除了底牌红桃2，只有方块7看得清楚",
+      "dimension": "画面",
+      "polarity": "0"
+    },
+    {
+      "t": 74.302,
+      "text": "也是很经典的音乐了",
+      "dimension": "音乐",
+      "polarity": "+"
+    },
+    {
+      "t": 74.609,
+      "text": "就是周杰伦有点尴尬啊",
+      "dimension": "演技",
+      "polarity": "-"
+    },
+    {
+      "t": 79.126,
+      "text": "到方片7轻微顿了一下，让人看清，属于心理暗示",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 79.139,
+      "text": "这里是把方块七的下面一张牌抽出来一点，这样在拨牌的时候方块七停留时间更长，自然记得就是方块七",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 84.116,
+      "text": "因为7是多张7重叠在一起的",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 84.257,
+      "text": "因为方块7 停顿的时间久一些 我注意到了",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 88.925,
+      "text": "哈哈，我看了一下就他最明显，可能有诈，故意选了一张别的",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 90.596,
+      "text": "弹幕里在这里惊讶的只能说生活处处是魔法",
+      "dimension": "整体",
+      "polarity": "0"
+    },
+    {
+      "t": 95.994,
+      "text": "不好意思，我看了两遍，我选择了k，因为我看的不是出现最多的次数的那张",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 101.418,
+      "text": "《圈套》系列讲了超多魔术",
+      "dimension": "整体",
+      "polarity": "0"
+    },
+    {
+      "t": 102.206,
+      "text": "方块7，惊到我了。",
+      "dimension": "情感共鸣",
+      "polarity": "+"
+    },
+    {
+      "t": 112.826,
+      "text": "这位是魔法师",
+      "dimension": "演技",
+      "polarity": "+"
+    },
+    {
+      "t": 123.769,
+      "text": "那是因为方块七要比其他牌短一截",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 132.787,
+      "text": "B站搜心灵魔法就是这个类型的很好看",
+      "dimension": "整体",
+      "polarity": "+"
+    },
+    {
+      "t": 159.891,
+      "text": "这段我一直以为女的是托",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 161.628,
+      "text": "开启了新世界的大门",
+      "dimension": "整体",
+      "polarity": "+"
+    },
+    {
+      "t": 196.415,
+      "text": "当时刚看吓到我了",
+      "dimension": "情感共鸣",
+      "polarity": "-"
+    },
+    {
+      "t": 200.521,
+      "text": "这集我看过，有一个复制人的机器，这个被吃掉的是复制人",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 203.178,
+      "text": "这个吓到我了",
+      "dimension": "情感共鸣",
+      "polarity": "-"
+    },
+    {
+      "t": 206.078,
+      "text": "就这段让这个女演员有心理阴影拒绝演第二部",
+      "dimension": "演技",
+      "polarity": "0"
+    },
+    {
+      "t": 209.487,
+      "text": "其实人已经死了，这是她双胞胎妹妹",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 213.279,
+      "text": "misdirection",
+      "dimension": "叙事手法",
+      "polarity": "0"
+    },
+    {
+      "t": 233.044,
+      "text": "经典表情包",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 255.685,
+      "text": "跟毛骗开始一样",
+      "dimension": "整体",
+      "polarity": "0"
+    },
+    {
+      "t": 288.632,
+      "text": "盲生 你发现了一个华点",
+      "dimension": "细节",
+      "polarity": "+"
+    },
+    {
+      "t": 315.453,
+      "text": "前面的，就是周董给电影写的主题曲啦，后面还有客串",
+      "dimension": "音乐",
+      "polarity": "0"
+    },
+    {
+      "t": 318.335,
+      "text": "周董的now you see me是主题曲",
+      "dimension": "音乐",
+      "polarity": "0"
+    },
+    {
+      "t": 352.04,
+      "text": "其实我感觉玫瑰并不好闻",
+      "dimension": "细节",
+      "polarity": "-"
+    },
+    {
+      "t": 386.969,
+      "text": "这电影就是看个爽就行了，较真的话完全没法看",
+      "dimension": "整体",
+      "polarity": "0"
+    },
+    {
+      "t": 387.044,
+      "text": "每次看到这一段都会起鸡皮疙瘩，真的太帅了",
+      "dimension": "情感共鸣",
+      "polarity": "+"
+    },
+    {
+      "t": 389.788,
+      "text": "这环境密闭个der，而且这点干冰也算多？",
+      "dimension": "画面",
+      "polarity": "-"
+    },
+    {
+      "t": 455.224,
+      "text": "这就扯淡了",
+      "dimension": "剧情",
+      "polarity": "-"
+    },
+    {
+      "t": 517.821,
+      "text": "没搞明白咋回事，然后他生气了。变身了",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 604.779,
+      "text": "x教授给人当媒婆belike",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 626.851,
+      "text": "这片目前为止已经聚齐了蝙蝠侠管家阿福、莱克斯卢瑟和绿巨人浩克（",
+      "dimension": "剧情",
+      "polarity": "0"
+    },
+    {
+      "t": 637.221,
+      "text": "马克：（老子满眼都是欣赏的表情）好啊，好啊",
+      "dimension": "演技",
+      "polarity": "+"
+    },
+    {
+      "t": 670.951,
+      "text": "其实，他们都玩不过班纳",
+      "dimension": "剧情",
+      "polarity": "0"
+    }
+  ]
+}

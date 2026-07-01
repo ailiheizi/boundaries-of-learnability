@@ -1,0 +1,83 @@
+{
+  "video": "前方高能！让世界感受这场视觉盛宴吧！",
+  "total_raw": 1200,
+  "after_rule_filter": 102,
+  "sample_classified": 102,
+  "evaluative_count": 10,
+  "evaluative_rate": 0.09803921568627451,
+  "dimension_distribution": {
+    "细节": 1,
+    "整体": 3,
+    "情感共鸣": 1,
+    "剧情": 1,
+    "演技": 1,
+    "画面": 3
+  },
+  "polarity_distribution": {
+    "0": 1,
+    "+": 4,
+    "-": 5
+  },
+  "evaluative_samples": [
+    {
+      "t": 14.609,
+      "text": "第15秒竟然有食灵零的便当姬黄泉一闪而过",
+      "dimension": "细节",
+      "polarity": "0"
+    },
+    {
+      "t": 19.6,
+      "text": "卧槽，居然有天狼！！！你币有了",
+      "dimension": "整体",
+      "polarity": "+"
+    },
+    {
+      "t": 19.702,
+      "text": "混入了燃不起来的东西",
+      "dimension": "情感共鸣",
+      "polarity": "-"
+    },
+    {
+      "t": 28.736,
+      "text": "夏洛特好评",
+      "dimension": "整体",
+      "polarity": "+"
+    },
+    {
+      "t": 38.14,
+      "text": "火影博人转出来了，争口气啊博人",
+      "dimension": "剧情",
+      "polarity": "+"
+    },
+    {
+      "t": 42.557,
+      "text": "菜就多练",
+      "dimension": "演技",
+      "polarity": "-"
+    },
+    {
+      "t": 51.318,
+      "text": "你怎么保养皮肤的，真羡慕你的皮肤，保养得真厚我去",
+      "dimension": "画面",
+      "polarity": "-"
+    },
+    {
+      "t": 87.187,
+      "text": "打在画面上的字幕是什么鬼？？！",
+      "dimension": "画面",
+      "polarity": "-"
+    },
+    {
+      "t": 102.05,
+      "text": "HELLSING！ 最极致的暴力美学！",
+      "dimension": "整体",
+      "polarity": "+"
+    },
+    {
+      "t": 123.54,
+      "text": "这字幕什么鬼东西啊？！",
+      "dimension": "画面",
+      "polarity": "-"
+    }
+  ]
+}
