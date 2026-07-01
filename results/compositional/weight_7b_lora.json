@@ -1,0 +1,1 @@
+{"model":"Qwen/Qwen2.5-7B","full_ft":false,"n_chains":30,"epochs":15,"results":{"2":{"single":0.1,"comp":0.067,"cot":0.033},"3":{"single":0.983,"comp":0.0,"cot":0.0},"4":{"single":0.817,"comp":0.017,"cot":0.017}}}
