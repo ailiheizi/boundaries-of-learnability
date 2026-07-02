@@ -150,13 +150,14 @@ This parallels Study 1: explicit signals (keywords $\approx$ in-context facts) a
 
 \section{Discussion}
 
-\paragraph{A unified boundary.} Both studies converge: \emph{explicit} knowledge (in-context facts, keyword annotations) supports downstream tasks; \emph{implicit} knowledge (weight-stored facts under LoRA, subtle textual features) does not. The boundary aligns with accessibility rather than existence---the knowledge \emph{is there} (98\% single-hop, keywords exist in text) but cannot be \emph{compositionally accessed}.
+\paragraph{A provisional boundary.} Both studies converge on a suggestive pattern: \emph{explicit} knowledge (in-context facts, keyword annotations) supports downstream tasks; \emph{implicit} knowledge (weight-stored facts under LoRA, subtle textual features) does not. However, a critical confound qualifies this interpretation: LoRA training itself damages in-context CoT ability (base 70\% $\rightarrow$ LoRA 10\% on novel chains), so the closed-book failure may partly reflect general capability collapse rather than a storage-specific accessibility boundary. Until a rank/epoch ablation identifies a configuration that preserves reasoning while memorizing facts, the boundary should be understood as \emph{observed under standard LoRA regimes} rather than as a fundamental architectural constraint.
 
 \paragraph{Practical implications.} For systems requiring compositional retrieval over stored knowledge, our results motivate explicit retrieval (RAG) over parametric storage, particularly when fine-tuning budgets are limited to LoRA. The LoRA-vs-full-FT distinction \cite{balesni2024twohop} suggests that training regime is a critical design choice for knowledge-intensive tasks.
 
 \section{Limitations}
 
 \begin{enumerate}
+\item \textbf{LoRA capability damage (critical confound).} A twin control reveals that the LoRA training regime used (rank=16, 12--15 epochs) significantly damages the model's general in-context CoT ability: base 7B scores 70\% on novel in-context composition, dropping to 10\% after LoRA training. This means the 0\% closed-book result may reflect \emph{capability collapse} rather than a storage-specific boundary. We are conducting a rank/epoch ablation (rank 2--16, epochs 3--15) to identify configurations where facts are memorized but reasoning remains intact. Until this ablation identifies a ``sweet spot,'' the causal interpretation (storage-vs-reasoning dissociation) remains provisional.
 \item \textbf{LoRA only.} We do not test full fine-tuning or extended training. The dissociation may not hold under those regimes \cite{balesni2024twohop,power2022grokking}.
 \item \textbf{Scale.} Three model sizes (1.5B, 3B, 7B) under one architecture (Qwen2.5). Larger models or different architectures may behave differently.
 \item \textbf{Single relation type.} Facts use one relation (``work partner''). Multi-relation chains or more natural knowledge may differ.
